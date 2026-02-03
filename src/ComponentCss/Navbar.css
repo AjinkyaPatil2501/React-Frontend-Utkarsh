@@ -1,0 +1,104 @@
+/* ================== BANK NAVBAR THEME ================== */
+
+/* Main navbar */
+.navbar {
+  background: linear-gradient(90deg, #1e8549,#a0cdb4) !important;
+  /* background: #a0cdb4; */
+  border-bottom: 2px solid #1e8549;
+  min-height: 60px;
+}
+
+/* Brand / Left items */
+.navbar .nav-link {
+  color: #eafaf1 !important;
+  font-weight: 500;
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+}
+
+/* Hover effect */
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+}
+
+/* Active menu */
+.navbar .nav-link.active {
+  background-color: rgba(255, 255, 255, 0.25);
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+/* Username */
+.navbar .fw-bold {
+  font-size: 0.95rem;
+  color: #eafaf1;
+}
+
+/* ================== DROPDOWNS ================== */
+.dropdown-menu {
+  border-radius: 6px;
+  border: 1px solid #d1fae5;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  padding: 0.3rem 0;
+}
+
+/* Dropdown items */
+.dropdown-item {
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+  color: #064e3b;
+  background-color: #ffffff;
+}
+
+/* Dropdown hover */
+.dropdown-item:hover {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+/* ================== SUBMENU ================== */
+.dropdown-submenu {
+  position: relative;
+}
+
+.dropdown-submenu > .dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-left: 0.1rem;
+}
+
+/* Arrow alignment fix */
+.dropdown-submenu > .dropdown-item::after {
+  content: "▶";
+  float: right;
+  font-size: 0.7rem;
+  margin-top: 4px;
+  color: #065f46;
+}
+
+/* ================== LOGOUT ================== */
+.dropdown-item.logout {
+  color: #b91c1c;
+  font-weight: 600;
+}
+
+.dropdown-item.logout:hover {
+  background-color: #fee2e2;
+}
+
+/* ================== MOBILE ================== */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0.5rem 1rem;
+  }
+
+  .navbar .nav-link {
+    padding: 0.5rem 0.75rem;
+  }
+
+  .dropdown-menu {
+    box-shadow: none;
+  }
+}

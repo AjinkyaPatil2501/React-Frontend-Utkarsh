@@ -1,0 +1,304 @@
+/* ======================================================
+   ROOT VARIABLES (Industry Standard)
+====================================================== */
+:root {
+  --primary: #2563eb;
+  --primary-hover: #1e40af;
+  --success: #16a34a;
+  --danger: #dc2626;
+  --border: #e2e8f0;
+  --muted: #64748b;
+  --bg-light: #f8fafc;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --shadow-sm: 0 2px 6px rgba(0,0,0,0.05);
+  --shadow-md: 0 6px 18px rgba(0,0,0,0.08);
+  --transition: 0.2s ease;
+}
+
+/* ======================================================
+   SECTION CARD
+====================================================== */
+.section {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  margin-bottom: 20px;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--transition);
+}
+
+.section:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.section h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #0f172a;
+  margin-bottom: 14px;
+  padding-left: 10px;
+  border-left: 4px solid var(--primary);
+}
+
+/* ======================================================
+   GRID SYSTEM
+====================================================== */
+.grid {
+  display: grid;
+  gap: 12px;
+  width: 100%;
+}
+
+.grid-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-4 { grid-template-columns: repeat(4, 1fr); }
+.grid-auto { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+
+/* Mobile-first: stack columns */
+@media (max-width: 768px) {
+  .grid-2, .grid-3, .grid-4, .grid-auto {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ======================================================
+   COMPACT FORM TWEAKS
+====================================================== */
+.compact-form label {
+  margin-bottom: 8px;
+}
+
+.compact-form input,
+.compact-form select,
+.compact-form textarea {
+  padding: 6px 10px;
+  font-size: 12px;
+}
+
+/* ======================================================
+   LABELS & INPUTS
+====================================================== */
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #334155;
+  margin-bottom: 10px;
+}
+
+input,
+select,
+textarea {
+  padding: 8px 10px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  font-size: 13px;
+  background: var(--bg-light);
+  outline: none;
+  transition: border-color var(--transition),
+              box-shadow var(--transition),
+              background var(--transition);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--primary);
+  background: #ffffff;
+  box-shadow: 0 0 0 2px rgba(37,99,235,0.15);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 70px;
+}
+
+input[readonly],
+input:disabled,
+textarea:disabled,
+select:disabled {
+  background: #f1f5f9;
+  color: var(--muted);
+  cursor: not-allowed;
+}
+
+/* ======================================================
+   BUTTONS
+====================================================== */
+button {
+  border: none;
+  cursor: pointer;
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: background var(--transition),
+              transform 0.1s ease,
+              box-shadow var(--transition);
+  box-shadow: var(--shadow-sm);
+}
+
+button:active {
+  transform: scale(0.96);
+}
+
+/* Primary */
+button[type="button"] {
+  background: var(--primary);
+  color: #ffffff;
+}
+
+button[type="button"]:hover {
+  background: var(--primary-hover);
+}
+
+/* Success */
+button.capture-btn {
+  background: var(--success);
+}
+
+button.capture-btn:hover {
+  background: #15803d;
+}
+
+/* Danger */
+button.remove-btn {
+  background: var(--danger);
+}
+
+button.remove-btn:hover {
+  background: #b91c1c;
+}
+
+/* ======================================================
+   PHOTO / CAMERA SECTION
+====================================================== */
+.photo-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+.camera-box {
+  margin-top: 12px;
+  padding: 12px;
+  border-radius: var(--radius-md);
+  border: 1px dashed var(--border);
+  background: var(--bg-light);
+  text-align: center;
+}
+
+.camera-box video {
+  width: 100%;
+  max-height: 220px;
+  border-radius: var(--radius-md);
+  margin-bottom: 10px;
+  box-shadow: var(--shadow-sm);
+}
+
+.camera-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+/* ======================================================
+   IMAGE PREVIEW
+====================================================== */
+.image-preview {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.image-preview img {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+}
+
+.required {
+  color: red;
+  margin-left: 2px;
+  font-weight: bold;
+}
+
+
+/* ======================================================
+   ERROR TEXT
+====================================================== */
+.error-text {
+  font-size: 12px;
+  color: var(--danger);
+  margin-top: 4px;
+}
+
+
+/* ======================= Photo Preview Css ================================= */
+
+/* .preview-row {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.preview-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.preview-box img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.remove-btn {
+  margin-top: 6px;
+  padding: 4px 10px;
+  background: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+} */
+
+
+/* ======================================================
+   RESPONSIVE / MOBILE TUNING
+====================================================== */
+@media (max-width: 480px) {
+  .section {
+    padding: 14px;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  .photo-actions {
+    flex-direction: column;
+  }
+
+  .camera-box video {
+    max-height: 180px;
+  }
+
+  .image-preview img {
+    width: 70px;
+    height: 70px;
+  }
+}

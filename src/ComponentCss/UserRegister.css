@@ -1,0 +1,342 @@
+/*
+.user-master-wrapper {
+  max-width: 900px;
+ 
+  margin: 2rem auto;
+  
+   padding: 2rem;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.user-master-wrapper h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.form-row label {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.photo-upload-section {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.photo-label {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  display: block;
+  color: #333;
+}
+
+.photo-box {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  background-color: #f0f0f0;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.photo-placeholder {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.photo-preview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photo-button {
+  margin-top: 0.5rem;
+  padding: 0.4rem 1rem;
+  background-color: #1976d2;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.photo-button:hover {
+  background-color: #125a9c;
+}
+
+.required {
+  color: red;
+  margin-left: 4px;
+} */
+
+
+/* =========================================================
+   SUBMIT BUTTON (Save)
+========================================================= */
+/* .submit-btn {
+  background: linear-gradient(135deg, #28a745, #1f8f3a);
+  color: #ffffff;
+  min-width: 220px;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 10px;
+}
+
+.submit-btn:hover {
+  background: linear-gradient(135deg, #23923d, #187c32);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.submit-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+  margin-top: 4px;
+  display: block;
+}
+
+
+
+
+ .bottom-actions {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--bg-card);
+  border-top: 1px solid var(--border-light);
+  padding: 12px 24px;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.04);
+  z-index: 999;
+} 
+
+
+.user-master-wrapper {
+  padding-bottom: 80px; 
+} */
+
+
+/* ===============================
+   USER MASTER WRAPPER
+================================ */
+.user-master-wrapper {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 2rem 2rem 80px; /* space for fixed buttons */
+  background: #f3fbf7; /* light green tint */
+  border-radius: 12px;
+  border: 1px solid #d1fae5;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+/* Title */
+.user-master-wrapper h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #064e3b;
+  font-weight: 700;
+}
+
+/* ===============================
+   FORM LAYOUT
+================================ */
+.form-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.form-row label {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #065f46;
+}
+
+/* Inputs */
+.form-row input,
+.form-row select {
+  height: 40px;
+  padding: 0 0.75rem;
+  border-radius: 6px;
+  border: 1px solid #a7f3d0;
+  font-size: 0.9rem;
+  background: #ffffff;
+}
+
+.form-row input:focus,
+.form-row select:focus {
+  outline: none;
+  border-color: #1e8449;
+  box-shadow: 0 0 0 2px rgba(30, 132, 73, 0.25);
+}
+
+/* Required star */
+.required {
+  color: #dc2626;
+  margin-left: 4px;
+}
+
+/* ===============================
+   PHOTO UPLOAD
+================================ */
+.photo-upload-section {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.photo-label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #065f46;
+}
+
+.photo-box {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto;
+  border: 2px dashed #34d399;
+  background-color: #ecfdf5;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.photo-placeholder {
+  font-size: 0.75rem;
+  color: #047857;
+}
+
+.photo-preview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Upload button */
+.photo-button {
+  margin-top: 0.6rem;
+  padding: 0.4rem 1.2rem;
+  background: linear-gradient(135deg, #0b3d2e, #145a32);
+  color: #ffffff;
+  border: none;
+  border-radius: 999px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.photo-button:hover {
+  opacity: 0.9;
+}
+
+/* ===============================
+   ERROR MESSAGE
+================================ */
+.error {
+  color: #dc2626;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+/* ===============================
+   SUBMIT BUTTON
+================================ */
+.submit-btn {
+  background: linear-gradient(135deg, #1e8449, #145a32);
+  color: #ffffff;
+  min-width: 220px;
+  padding: 12px 24px;
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.16);
+}
+
+.submit-btn:active {
+  transform: translateY(0);
+}
+
+/* ===============================
+   FIXED BOTTOM ACTION BAR
+================================ */
+.bottom-actions {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #ffffff;
+  border-top: 2px solid #d1fae5;
+  padding: 12px 24px;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.06);
+  z-index: 999;
+}
+
+/* ===============================
+   FORCE CHECKBOX SINGLE ROW
+================================ */
+.form-row label.checkbox-row {
+  display: inline-flex !important;
+  flex-direction: row !important;   /* 🔥 KEY FIX */
+  align-items: center !important;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #065f46;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* Small checkbox */
+.form-row label.checkbox-row input[type="checkbox"] {
+  width: 14px !important;
+  height: 14px !important;
+  margin: 0 !important;
+  accent-color: #1e8449;
+  flex-shrink: 0;
+}

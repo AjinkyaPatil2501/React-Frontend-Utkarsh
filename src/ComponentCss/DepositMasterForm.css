@@ -1,0 +1,884 @@
+/* ==================== DEPOSIT MASTER CONTAINER ==================== */
+.deposit-master-container {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #f5f5f5;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.deposit-master-container > * {
+    max-width: 1200px;
+    width: 100%;
+}
+
+.deposit-master-header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 8px 8px 0 0;
+    margin-bottom: 20px;
+}
+
+.deposit-master-header h2 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+/* ==================== MESSAGE ALERTS ==================== */
+.message {
+    padding: 12px 20px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* ==================== FORM WRAPPER ==================== */
+.deposit-form {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.deposit-form-wrapper {
+    flex: 1;
+    overflow-y: auto;
+    padding-bottom: 90px;
+}
+
+.deposit-form fieldset {
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+.deposit-form fieldset:disabled {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* ==================== TAB NAVIGATION ==================== */
+.deposit-tabs-wrapper {
+    width: 100%;
+}
+
+.tab-navigation {
+    display: flex;
+    /* background-color: #ecf0f1; */
+    /* border-bottom: 2px solid #3498db; */
+    overflow-x: auto;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.tab-button {
+    flex: 1;
+    min-width: 150px;
+    padding: 6px 12px;
+    background-color: transparent;
+    border: none;
+    border-right: 1px solid #ddd;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    color: #555;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.tab-button:last-child {
+    border-right: none;
+}
+
+.tab-button:hover {
+    background-color: #d5dbdb;
+}
+
+.tab-button.active {
+    background-color: #007bff;
+    color: white;
+    font-weight: 600;
+    border-radius: 4px;
+}
+
+.tab-button:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+/* ==================== TAB CONTENT ==================== */
+.tab-content {
+    padding: 20px 30px;
+    min-height: 450px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+}
+
+.tab-panel {
+    animation: fadeIn 0.3s ease-in;
+    width: 100%;
+    max-width: 900px;
+}
+/* 
+.ledger-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.ledger-modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 500px;
+  max-height: 70vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ledger-search-box {
+  padding: 8px;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.ledger-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.ledger-table th, .ledger-table td {
+  border: 1px solid #ccc;
+  padding: 6px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.ledger-table tr:hover {
+  background-color: #f0f0f0;
+}
+
+.ledger-modal-close {
+  margin-top: 10px;
+  padding: 6px 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+ */
+
+ .ledger-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.ledger-modal-content {
+  background: #fff;
+  width: 520px;
+  padding: 15px;
+  border-radius: 6px;
+  max-height: 70vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* HEADER */
+.ledger-modal-header {
+  margin-bottom: 8px;
+}
+
+/* SEARCH */
+.ledger-search-box {
+  width: 100%;
+  padding: 6px;
+  margin-bottom: 8px;
+  border: 1px solid #999;
+}
+
+/* TABLE SCROLL */
+.ledger-table-wrapper {
+  flex: 1;
+  max-height: 230px;   /* 👈 table smaller */
+  overflow-y: auto;
+  border: 1px solid #ccc;
+}
+
+.ledger-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.ledger-table th,
+.ledger-table td {
+  border: 1px solid #ccc;
+  padding: 6px;
+}
+
+.ledger-table tr {
+  cursor: pointer;
+}
+
+.ledger-table tr:hover {
+  background: #e6f0ff;
+}
+
+/* FOOTER */
+.ledger-modal-footer {
+  margin-top: 10px;
+  text-align: right;
+}
+
+.ledger-modal-close {
+ margin-top: 10px;
+  padding: 6px 14px;
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==================== FORM ROWS & LAYOUT ==================== */
+.general-form-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-column-main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 15px 30px;
+    align-items: start;
+}
+
+.form-column-main > .form-row {
+    grid-column: span 1;
+}
+
+/* Full width rows in general tab */
+.form-column-main > .form-row:has(.input-with-button),
+.form-column-main > .form-row:has(.split-row.three-items) {
+    grid-column: 1 / -1;
+}
+
+.personal-info-form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 12px 25px;
+    align-items: start;
+}
+
+.personal-info-form > .form-row {
+    grid-column: span 1;
+}
+
+/* Full width rows for textareas and special fields */
+.personal-info-form > .form-row:has(textarea),
+.personal-info-form > .form-row:has(.input-with-button),
+.personal-info-form > .form-row:has(.split-row) {
+    grid-column: 1 / -1;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 170px 1fr;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 0;
+    min-height: 42px;
+}
+
+.form-row label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    text-align: right;
+    padding-right: 10px;
+    white-space: nowrap;
+}
+
+.form-row input,
+.form-row select,
+.form-row textarea {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    max-width: 100%;
+}
+
+.form-row input:focus,
+.form-row select:focus,
+.form-row textarea:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.15);
+}
+
+.form-row input:disabled,
+.form-row select:disabled,
+.form-row textarea:disabled {
+    background-color: #f5f5f5;
+    cursor: not-allowed;
+}
+
+/* ==================== INPUT GROUPS ==================== */
+.input-group {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    width: 100%;
+}
+
+.input-group select {
+    flex: 2;
+    min-width: 180px;
+}
+
+.input-group .extra-input {
+    flex: 1;
+    min-width: 100px;
+    background-color: #f5f5f5;
+}
+
+/* ==================== INPUT WITH BUTTON ==================== */
+.input-with-button {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    width: 100%;
+}
+
+.input-with-button input {
+    flex: 1;
+    min-width: 180px;
+}
+
+.input-with-button select {
+    flex: 0 0 160px;
+}
+
+.input-with-button .extra-dropdown {
+    flex: 0 0 140px;
+}
+
+.info-btn {
+    padding: 8px 16px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+    white-space: nowrap;
+    transition: background-color 0.3s ease;
+    flex-shrink: 0;
+}
+
+.info-btn:hover {
+    background-color: #2980b9;
+}
+
+/* ==================== SPLIT ROWS ==================== */
+.split-row {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    width: 100%;
+}
+
+.split-row input,
+.split-row select {
+    flex: 1;
+    min-width: 100px;
+}
+
+.split-row .small-select {
+    flex: 0 0 140px;
+}
+
+.split-row .form-select {
+    flex: 2;
+    min-width: 180px;
+}
+
+.split-row .flex-1 {
+    flex: 1;
+}
+
+.split-row.three-items {
+    display: grid;
+    grid-template-columns: 140px 180px 1fr;
+    gap: 10px;
+    width: 100%;
+    align-items: center;
+}
+
+.split-row.three-items .extra-dropdown {
+    width: 100%;
+}
+
+.split-row.three-items .director-select {
+    width: 100%;
+}
+
+.split-row.three-items .input-with-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+}
+
+/* ==================== INPUT WITH LABEL ==================== */
+.input-with-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: auto;
+}
+
+.input-with-label input {
+    flex: 1;
+    min-width: 80px;
+    max-width: 120px;
+}
+
+.input-with-label span,
+.input-with-label label {
+    font-size: 14px;
+    color: #555;
+    white-space: nowrap;
+    font-weight: 500;
+}
+
+/* ==================== INPUT SIZES ==================== */
+.half-width-input {
+    max-width: 280px;
+}
+
+.small-input {
+    max-width: 100px;
+}
+
+.medium-input {
+    max-width: 220px;
+}
+
+.amount-field {
+    text-align: right;
+}
+
+.small-select {
+    max-width: 140px;
+}
+
+.form-select {
+    width: 100%;
+}
+
+.form-textarea {
+    min-height: 60px;
+    resize: vertical;
+    /* font-family: inherit; */
+    width: 100%;
+}
+
+.english-name-input {
+    flex: 1;
+    min-width: 120px;
+}
+
+/* ==================== MULTI FIELD ROW ==================== */
+.multi-field-row {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    grid-column: 1 / -1;
+    padding-left: 0;
+    justify-content: flex-start;
+}
+
+.field-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.field-group label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    white-space: nowrap;
+}
+
+/* ==================== BUTTONS ==================== */
+.btn-action,
+.btn-secondary {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    height: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 80px;
+}
+
+.btn-action {
+    background-color: #3498db;
+    color: white;
+}
+
+.btn-action:hover:not(:disabled) {
+    background-color: #2980b9;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(52, 152, 219, 0.3);
+}
+
+.btn-action:disabled {
+    background-color: #95a5a6;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.btn-secondary {
+    background-color: #95a5a6;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #7f8c8d;
+}
+
+.submit-btn {
+    background-color: #27ae60;
+}
+
+.submit-btn:hover {
+    background-color: #229954;
+}
+
+.cancel-btn {
+    background-color: #e67e22;
+}
+
+.cancel-btn:hover {
+    background-color: #d35400;
+}
+
+.exit-btn {
+    background-color: #e74c3c;
+}
+
+.exit-btn:hover {
+    background-color: #c0392b;
+}
+
+/* ==================== TABLE SECTION ==================== */
+.table-section {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 20px;
+    max-width: 800px;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    background-color: white;
+}
+
+.data-table th,
+.data-table td {
+    padding: 10px 12px;
+    font-size: 14px;
+    text-align: left;
+}
+
+.data-table thead {
+    background-color: #34495e;
+    color: white;
+}
+
+.data-table tbody tr:hover {
+    background-color: #f1f4f8;
+}
+
+.empty-table-cell {
+    height: 40px;
+    background-color: #fafafa;
+}
+
+/* ==================== FOOTER ==================== */
+.form-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    background-color: #ecf0f1;
+    border-top: 2px solid #bdc3c7;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.form-footer.fixed-footer {
+    position: fixed;
+    bottom: 0;
+    left: center;
+    width: 100%;
+    background-color: #f8f9fa;
+    padding: 12px 20px;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-footer.fixed-footer .button-group {
+    margin-left: 0;
+    justify-content: center;
+}
+
+.footer-left {
+    display: flex;
+    gap: 10px;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+    margin-left: auto;
+}
+
+
+/* ==================== RESPONSIVE DESIGN ==================== */
+@media screen and (max-width: 1024px) {
+    .form-column-main,
+    .personal-info-form {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-row {
+        grid-template-columns: 160px 1fr;
+    }
+    
+    .split-row.three-items {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+    
+    .tab-button {
+        min-width: 120px;
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .deposit-master-container {
+        padding: 10px;
+    }
+    
+    .tab-content {
+        padding: 15px;
+    }
+    
+    .tab-panel {
+        max-width: 100%;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 6px;
+    }
+    
+    .form-row label {
+        text-align: left;
+        padding-right: 0;
+        padding-bottom: 5px;
+    }
+    
+    .input-group,
+    .input-with-button,
+    .split-row,
+    .input-with-label {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .input-with-label {
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+    
+    .multi-field-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+    
+    .field-group {
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .form-footer {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .footer-left,
+    .button-group {
+        width: 100%;
+    }
+    
+    .button-group {
+        justify-content: center;
+    }
+    
+    .btn-action,
+    .btn-secondary {
+        flex: 1;
+        min-width: 100px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .deposit-master-container {
+        padding: 8px;
+    }
+    
+    .deposit-master-header h2 {
+        font-size: 18px;
+    }
+    
+    .tab-button {
+        min-width: 90px;
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+    
+    .btn-action,
+    .btn-secondary {
+        padding: 8px 12px;
+        font-size: 13px;
+        min-width: 80px;
+    }
+    
+    .data-table th,
+    .data-table td {
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+    
+    .form-row label {
+        font-size: 13px;
+    }
+    
+    .form-row input,
+    .form-row select,
+    .form-row textarea {
+        font-size: 13px;
+    }
+}
+
+/* ==================== PRINT STYLES ==================== */
+@media print {
+    .deposit-master-header,
+    .form-footer,
+    .tab-navigation {
+        display: none;
+    }
+    
+    .deposit-master-container {
+        background-color: white;
+        padding: 0;
+    }
+    
+    .deposit-form {
+        box-shadow: none;
+    }
+    
+    .tab-content {
+        padding: 0;
+    }
+}
+
+/* ==================== UTILITIES ==================== */
+.text-right { text-align: right; }
+.text-center { text-align: center; }
+.mb-10 { margin-bottom: 10px; }
+.mb-20 { margin-bottom: 20px; }
+.mt-10 { margin-top: 10px; }
+.mt-20 { margin-top: 20px; }
+
+/* ==================== ACCESSIBILITY ==================== */
+*:focus-visible { 
+    outline: 2px solid #3498db; 
+    outline-offset: 2px; 
+}
+
+button:focus-visible { 
+    outline: 2px solid #2980b9; 
+}
+
+/* ==================== TRANSITIONS ==================== */
+* { 
+    transition: background-color 0.2s ease, border-color 0.2s ease; 
+}
+
+button, a { 
+    transition: all 0.3s ease; 
+}

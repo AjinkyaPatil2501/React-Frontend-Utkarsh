@@ -1,0 +1,271 @@
+
+
+
+
+/* ================== Layout ================== */
+.login-container {
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 1rem;
+  /* background: linear-gradient(#4e75e9ea,#a675ac); */
+ 
+background: linear-gradient(#F6FBF7,#0B3D2E);
+}
+
+/* ================== Header ================== */
+.login-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.login-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #0a2a6b;
+  margin-bottom: 0.4rem;
+}
+
+.login-subtitle {
+  color: #444;
+  margin-bottom: 0.25rem;
+}
+
+.login-society {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* ================== Card ================== */
+.login-card {
+  width: 100%;
+  max-width: 420px;
+  /* background: rgba(255, 255, 255, 0.92); */
+  background: #a0cdb4;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 6px 18px rgba(136, 201, 210, 0.621);
+  
+}
+
+/* ================== Status Message ================== */
+.status-message {
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  text-align: center;
+  background: #f0f9ff;
+  border: 1px solid #0ea5e9;
+  color: #0c4a6e;
+}
+
+/* ================== Form ================== */
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-label {
+  display: block;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 0.4rem;
+}
+
+.form-input {
+  width: 100%;
+  height: 42px;
+  padding: 0 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.25);
+}
+
+.form-input:disabled {
+  background-color: #f5f5f5;
+  cursor: not-allowed;
+}
+
+
+
+/* ================== BUTTON ROW ================== */
+.button-row {
+  display: flex;
+  align-items: stretch; /* 🔒 NO vertical mismatch */
+  gap: 12px;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+/* ================== BASE BUTTON (HARD RESET) ================== */
+.button-row .btn {
+  flex: 1;
+
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* 🔥 OVERRIDE GLOBAL RESET */
+  background-color: transparent !important;
+  border: none !important;
+
+  padding: 0;
+  margin: 0;
+
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+
+  border-radius: 6px;
+  cursor: pointer;
+
+  appearance: none;
+  -webkit-appearance: none;
+
+  box-sizing: border-box;
+}
+
+/* ================== LOGIN (SUBMIT) ================== */
+.button-row .btn-login {
+  background-color: #2563eb !important;
+  color: #ffffff !important;
+}
+
+.button-row .btn-login:hover:not(:disabled) {
+  background-color: #1e4fc7 !important;
+}
+
+/* ================== CANCEL ================== */
+.button-row .btn-cancel {
+  background-color: #2563eb !important; /* same initial blue */
+  color: #ffffff !important;
+}
+
+.button-row .btn-cancel:hover:not(:disabled) {
+  background-color: #1e4fc7 !important;
+}
+
+/* ================== DISABLED ================== */
+.button-row .btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ================== MOBILE ================== */
+/* @media (max-width: 480px) {
+  .button-row {
+    flex-direction: column;
+  }
+
+  .button-row .btn {
+    width: 100%;
+  }
+} */
+
+
+/* ================== EXTRA BUTTONS ================== */
+.btn-fingerprint {
+  width: 100%;
+  height: 42px;
+  margin-top: 1rem;
+  background: #0a2a6b;
+  color: #fff;
+}
+
+.btn-fingerprint:hover:not(:disabled) {
+  background: #08306b;
+}
+
+.btn-final-login {
+  width: 100%;
+  height: 42px;
+  margin-top: 1rem;
+  background: #16a34a;
+  color: #fff;
+}
+
+.btn-final-login:hover:not(:disabled) {
+  background: #15803d;
+}
+
+/* ================== Login Steps ================== */
+.login-steps {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e5e5e5;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.step {
+  padding: 0.5rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  text-align: center;
+  background: #f5f5f5;
+  color: #666;
+}
+
+.step.active {
+  background: #dbeafe;
+  color: #1e40af;
+  font-weight: 600;
+}
+
+.step.completed {
+  background: #dcfce7;
+  color: #166534;
+  font-weight: 500;
+}
+
+.dropdown-submenu {
+  position: relative;
+}
+
+.dropdown-submenu > .dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-left: 0.1rem;
+  display: none;
+}
+
+.dropdown-submenu:hover > .dropdown-menu {
+  display: block;
+}
+
+/* ================== Mobile ================== */
+@media (max-width: 480px) {
+  .login-title {
+    font-size: 1.8rem;
+  }
+
+  .login-card {
+    padding: 1.5rem;
+  }
+
+  .button-row {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
+
